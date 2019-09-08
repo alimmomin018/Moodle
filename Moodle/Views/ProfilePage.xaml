@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Moodle.Views.ProfilePage"
+             Title="Profile">
+    <ScrollView>
+        <StackLayout Spacing="0">
+            <StackLayout Orientation="Horizontal" Margin="10">
+                <Image Source="{Binding UserImage}" Aspect="Fill" WidthRequest="200" HeightRequest="200"/>
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <Label Text="Name:" TextColor="Black"/>
+                    <Label Text="Jeff Bezos"/>
+                    <Label Text="Email id:" TextColor="Black"/>
+                    <Label Text="C0723234@mylambton.ca"/>
+                </StackLayout>
+            </StackLayout>
+            <BoxView HeightRequest="1" WidthRequest="1000" Color="Silver"/>
+            <StackLayout Margin="10">
+                <Label Text="Course Profile:" TextColor="Black"/>
+                <StackLayout Padding="15,0,0,0">
+                    <Label Text="2018F CIS 2103 3 [B123] Advanced Infrastructure Security"/>
+                    <Label Text="2018F CSD 2354 3 [B123] Programming C# .NET"/>
+                    <Label Text="2018F CSD 1134 5 [B122] Problem Solving/Program Logic"/>
+                    <Label Text="2018F CSD 2206 5 [B226] Database Design and SQL"/>
+                    <Label Text="2018F CSD 1113 5 [B123] Web Technologies I"/>
+                </StackLayout>
+            </StackLayout>
+            <BoxView HeightRequest="1" WidthRequest="1000" Color="Silver"/>
+            <StackLayout Margin="10">
+                <Label Text="Login Activity" TextColor="Black"/>
+                <Label Text="First access to site:" TextColor="Black"/>
+                <Label Text="Wednesday, 29 August 2018, 1:21 PM  (74 days 2 hours)" Margin="15,0,0,0"/>
+                <Label Text="last access to site:" TextColor="Black"/>
+                <Label Text="Sunday, 11 November 2018, 2:49 PM  (now)" Margin="15,0,0,0"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

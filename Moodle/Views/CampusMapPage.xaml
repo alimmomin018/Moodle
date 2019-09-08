@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Moodle.Views.CampusMapPage"
+             Title="Campus Map">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="First floor map" TextColor="Black" FontSize="Medium" />
+            <Image Source="firstfloormap.PNG" Aspect="AspectFit">
+                <Image.GestureRecognizers>
+                    <PinchGestureRecognizer PinchUpdated="OnPinchUpdated" />
+                    <PanGestureRecognizer PanUpdated="OnPanUpdated" />
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

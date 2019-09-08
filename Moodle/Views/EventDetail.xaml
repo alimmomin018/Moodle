@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Moodle.Views.EventDetail"
+             xmlns:local ="clr-namespace:Moodle.Interface"
+             Title="{Binding Title}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Int32 x:Key="gridRowHeight">20</x:Int32>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout x:Name="detailLayout" Margin="10">
+        <Label Text="Submission Status" FontSize="Large" TextColor="Black"/>        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{StaticResource gridRowHeight}"/>
+                <RowDefinition Height="{StaticResource gridRowHeight}"/>
+                <RowDefinition Height="{StaticResource gridRowHeight}"/>
+                <RowDefinition Height="{StaticResource gridRowHeight}"/>
+                <RowDefinition Height="{StaticResource gridRowHeight}"/>
+                <RowDefinition Height="{StaticResource gridRowHeight}"/>
+                <RowDefinition Height="{StaticResource gridRowHeight}"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Submission status:" Grid.Row="0" Grid.Column="0" TextColor="Black"/>
+            <Label Text="Submitted for grading" Grid.Row="0" Grid.Column="1" />
+
+            <Label Text="Grading status" Grid.Row="1" Grid.Column="0" TextColor="Black"/>
+            <Label Text="Not graded" Grid.Row="1" Grid.Column="1" />
+
+            <Label Text="Due date" Grid.Row="2" Grid.Column="0" TextColor="Black"/>
+            <Label Text="Saturday, 3 November 2018, 4:30 PM" Grid.Row="2" Grid.Column="1" />
+
+            <Label Text="Time remaining" Grid.Row="3" Grid.Column="0" TextColor="Black"/>
+            <Label Text="Assignment was submitted 52 mins 21 secs early" Grid.Row="3" Grid.Column="1" />
+
+            <Label Text="Last modified" Grid.Row="4" Grid.Column="0" TextColor="Black"/>
+            <Label Text="Saturday, 3 November 2018, 3:37 PM" Grid.Row="4" Grid.Column="1" />
+
+            <Label Text="File submissions" Grid.Row="5" Grid.Column="0" TextColor="Black"/>
+            <Label Text="Lab 7 Student.doc" Grid.Row="5" Grid.Column="1" />
+
+            <Label Text="Submission comments" Grid.Row="6" Grid.Column="0" TextColor="Black"/>
+            <Label Text="comments(0)" Grid.Row="6" Grid.Column="1" />
+        </Grid>
+        
+    </StackLayout>
+</ContentPage>

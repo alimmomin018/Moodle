@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Moodle.ViewModels"
+             Title="My Course"
+             x:Class="Moodle.Views.MyCoursePage">
+    <ContentPage.BindingContext>
+        <local:GradeViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <ListView ItemsSource="{Binding _grade}" 
+                  SeparatorVisibility="Default"
+                  HasUnevenRows="True"
+                  ItemTapped="courseListView_ItemTapped">
+            <ListView.Header>
+                <StackLayout Orientation="Horizontal" Margin="10">
+                    <Image Source="mycourse.png" HeightRequest="30" WidthRequest="30"/>
+                    <Label Text="My Course" TextColor="Black" FontSize="Large"/>
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Margin="10">
+                            <Label Text="{Binding Subject}" TextColor="Black"/>
+                            <StackLayout IsVisible="{Binding IsVisible}" Padding="15,0,0,0">
+                                <Label Text="Week 1" TextColor="Black"/>
+                                <Label Text="Week 2" TextColor="Black"/>
+                                <Label Text="Week 3" TextColor="Black"/>
+                                <Label Text="Week 4" TextColor="Black"/>
+                                <Label Text="Week 5" TextColor="Black"/>
+                                <Label Text="Week 6" TextColor="Black"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

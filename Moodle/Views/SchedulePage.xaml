@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Moodle.Views.SchedulePage"
+             Title="Schedule">
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <StackLayout x:Name="loadList">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="loadFullList_Tapped"/>
+                </StackLayout.GestureRecognizers>
+                <Label Text="Load full list" TextColor="#00ADE5" FontSize="Medium"
+                HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+
+            <ListView x:Name="scheduleListView"
+                      SeparatorVisibility="Default"
+                      ItemSelected="scheduleListView_ItemSelected"
+                      IsPullToRefreshEnabled="True"
+                      Refreshing="scheduleListView_Refreshing"
+                      HasUnevenRows="True" Margin="10,0,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="0">
+                                    <Label Text="{Binding CourseCode}" TextColor="Black" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding Date}" FontSize="Small"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="0">
+                                    <Label Text="{Binding CourseTitle}" TextColor="Black" HorizontalOptions="StartAndExpand"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Room Number:" TextColor="Black"/>
+                                    <Label Text="{Binding RoomNumber}" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Time:" TextColor="Black"/>
+                                    <Label Text="{Binding Time}" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Professor:" TextColor="Black"/>
+                                    <Label Text="{Binding Professor}" />
+                                    
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Moodle.ViewModels"
+             x:Class="Moodle.Views.GradePage"
+             Title="Grades">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Int32 x:Key="gridRowHeight">20</x:Int32>            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.BindingContext>
+        <local:GradeViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <ListView ItemsSource="{Binding _grade}" 
+                  SeparatorVisibility="Default"
+                  HasUnevenRows="True"
+                  ItemTapped="subjectListView_ItemTapped">
+            <ListView.Header>
+                <StackLayout Orientation="Horizontal" Margin="10">
+                    <Image Source="grade.png" HeightRequest="30" WidthRequest="30"/>
+                    <Label Text="Grades" TextColor="Black" FontSize="Large"/>
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Margin="10">
+                            <Label Text="{Binding Subject}" TextColor="Black"/>
+                            <Grid IsVisible="{Binding IsVisible}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="{StaticResource gridRowHeight}"/>
+                                    <RowDefinition Height="{StaticResource gridRowHeight}"/>
+                                    <RowDefinition Height="{StaticResource gridRowHeight}"/>
+                                    <RowDefinition Height="{StaticResource gridRowHeight}"/>
+                                    <RowDefinition Height="{StaticResource gridRowHeight}"/>
+                                    <RowDefinition Height="{StaticResource gridRowHeight}"/>
+                                    <RowDefinition Height="{StaticResource gridRowHeight}"/>
+                                    <RowDefinition Height="{StaticResource gridRowHeight}"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Text="Grade Item" TextColor="Black"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="Grade" TextColor="Black"/>
+                                <Label Grid.Row="0" Grid.Column="2" Text="Range" TextColor="Black"/>
+                                <Label Grid.Row="0" Grid.Column="3" Text="Percentage" TextColor="Black"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" Text="Assignment 1"/>
+                                <Label Grid.Row="1" Grid.Column="1" Text="100"/>
+                                <Label Grid.Row="1" Grid.Column="2" Text="0-100"/>
+                                <Label Grid.Row="1" Grid.Column="3" Text="100%"/>
+
+                                <Label Grid.Row="2" Grid.Column="0" Text="Assignment 2"/>
+                                <Label Grid.Row="2" Grid.Column="1" Text="100"/>
+                                <Label Grid.Row="2" Grid.Column="2" Text="0-100"/>
+                                <Label Grid.Row="2" Grid.Column="3" Text="100%"/>
+
+                                <Label Grid.Row="3" Grid.Column="0" Text="Test 1"/>
+                                <Label Grid.Row="3" Grid.Column="1" Text="100"/>
+                                <Label Grid.Row="3" Grid.Column="2" Text="0-100"/>
+                                <Label Grid.Row="3" Grid.Column="3" Text="100%"/>
+
+                                <Label Grid.Row="4" Grid.Column="0" Text="Assignment 3"/>
+                                <Label Grid.Row="4" Grid.Column="1" Text="100"/>
+                                <Label Grid.Row="4" Grid.Column="2" Text="0-100"/>
+                                <Label Grid.Row="4" Grid.Column="3" Text="100%"/>
+
+                                <Label Grid.Row="5" Grid.Column="0" Text="Assignment 4"/>
+                                <Label Grid.Row="5" Grid.Column="1" Text="100"/>
+                                <Label Grid.Row="5" Grid.Column="2" Text="0-100"/>
+                                <Label Grid.Row="5" Grid.Column="3" Text="100%"/>
+
+                                <Label Grid.Row="6" Grid.Column="0" Text="Test 2"/>
+                                <Label Grid.Row="6" Grid.Column="1" Text="100"/>
+                                <Label Grid.Row="6" Grid.Column="2" Text="0-100"/>
+                                <Label Grid.Row="6" Grid.Column="3" Text="100%"/>
+
+                                <Label Grid.Row="7" Grid.Column="0" Text="Total" TextColor="Black"/>
+                                <Label Grid.Row="7" Grid.Column="1" Text="-" TextColor="Black"/>
+                                <Label Grid.Row="7" Grid.Column="2" Text="-" TextColor="Black"/>
+                                <Label Grid.Row="7" Grid.Column="3" Text="-%" TextColor="Black"/>
+                            </Grid>
+                        </StackLayout>                        
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
